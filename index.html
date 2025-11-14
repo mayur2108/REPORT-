@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFI Directing Program Application Guide - Sangita's Roadmap</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=100..900&display=swap" rel="stylesheet">
+    <!-- Inter Font and Calligraphy Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2D3A8F; /* Deep Blue, inspired by AFI branding */
-            --accent-color: #F8B400; /* Gold/Yellow accent */
-            --light-bg: #F9FAFB; /* Very light gray/professional white */
+            --primary-color: #155E75; /* Dark Teal for professionalism */
+            --accent-color: #F97316; /* Orange for highlights/buttons */
+            --link-text-color: #8B5CF6; /* Dark Purple for highly visible links */
+            --light-bg: #F0F4F8; /* Light Slate/Blue-White */
             --card-bg: #FFFFFF;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--light-bg);
+        }
+
+        /* Custom calligraphy class */
+        .calligraphy {
+            font-family: 'Dancing Script', cursive;
         }
 
         /* Custom scrollbar for aesthetics */
@@ -63,7 +69,8 @@
             height: 1rem;
             margin-right: 0.25rem;
             vertical-align: middle;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3Cpath%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+            /* SVG for link/external icon, set to the accent color stroke (Purple) */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B5CF6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
         }
 
         /* Custom CSS for prompt tiles (Cricket style elements) */
@@ -73,7 +80,12 @@
         }
         .prompt-tile:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 4px rgba(248, 180, 0, 0.5); /* Yellow glow */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 4px rgba(249, 115, 22, 0.5); /* Orange glow */
+        }
+        
+        /* Style for the link text within the button (Dark Purple) */
+        .source-link-text {
+            color: var(--link-text-color); /* Dark Purple */
         }
     </style>
 </head>
@@ -82,8 +94,8 @@
 <div id="app" class="flex flex-col lg:flex-row min-h-screen">
     <!-- Sidebar Navigation -->
     <nav class="lg:w-72 bg-white shadow-xl lg:flex-shrink-0 custom-scrollbar overflow-y-auto">
-        <div class="p-6 border-b border-gray-100">
-            <h1 class="text-2xl font-black text-gray-800 tracking-tight">AFI Directing Roadmap</h1>
+        <div class="p-6 border-b-4 border-primary-color bg-gray-50">
+            <h1 class="text-2xl font-black text-primary-color tracking-tight">AFI Directing Roadmap</h1>
             <p class="text-sm text-gray-500 mt-1">For Fellow Sangita</p>
         </div>
         <ul id="nav-list" class="py-2">
@@ -97,6 +109,11 @@
             <!-- Content slides will be dynamically inserted here -->
         </div>
     </main>
+</div>
+
+<!-- Subtle Signature Element -->
+<div class="fixed bottom-4 right-4 text-gray-500 text-sm calligraphy z-50 opacity-70">
+    Made by Mayur Desale
 </div>
 
 <script>
@@ -145,15 +162,18 @@
             title: 'Welcome: AFI Directing Program',
             icon: '🎬',
             content: `
-                <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Your AFI Directing Journey Starts Now</h2>
-                <p class="text-lg text-gray-600 mb-6">This guide is your comprehensive, step-by-step roadmap for applying to the prestigious AFI Conservatory Directing program. Fellows spend two years directing multiple narrative projects (cycle films and a thesis). Selection is based primarily on the "creative portfolio and interview".</p>
-                <div class="p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg text-yellow-700">
-                    <p class="font-semibold">Key Focus:</p>
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Welcome, Future Filmmaker! Your Journey to AFI Begins.</h2>
+                <p class="text-lg text-gray-600 mb-4">This roadmap is dedicated to you, Sangita, as you embark on the ambitious and rewarding process of applying to the prestigious AFI Conservatory Directing program. AFI is where cinematic legends are forged, and every great journey starts with a perfect plan.</p>
+                <p class="text-lg text-gray-600 mb-6">Embrace the challenge of the application—it’s your first test of creative focus and determination. Remember, your **vision** is your most powerful tool. The next two years at AFI will transform your portfolio with multiple narrative projects. Use this guide to meticulously track every step and deadline.</p>
+                <div class="p-4 bg-yellow-100 border-l-4 border-yellow-400 rounded-lg text-yellow-800">
+                    <p class="font-bold">Focus Points for Success:</p>
                     <ul class="list-disc list-inside ml-4 text-sm mt-1">
-                        <li>Creative Portfolio (Sample & Assignment)</li>
-                        <li>Interview performance</li>
+                        <li>Creative Portfolio (Sample & Assignment) – Showcase your unique directorial voice.</li>
+                        <li>Interview Performance – Articulate your craft and leadership clearly.</li>
+                        <li>Meticulous Documentation – Leave no detail unchecked.</li>
                     </ul>
                 </div>
+                <p class="text-md text-gray-500 mt-6 italic">We believe in your story. Let's make this happen.</p>
             `,
             sources: [
                 { text: 'AFI Conservatory Official Admissions Page', url: 'https://conservatory.afi.com/directing/' }
@@ -183,7 +203,7 @@
                     </li>
                     <li class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
                         <p class="font-medium text-blue-800">Document Readiness</p>
-                        <p class="text-gray-700 mt-1">You must verify that all transcripts and supporting documents (translated to English if needed) will be available to upload to GradCAS. You will provide official documents later if admitted.</p>
+                        <p class="text-gray-700 mt-1">You must verify that all transcripts and supporting documents (translated to English if needed) will be available to upload to GradCAS and later provide official documents if admitted.</p>
                         <!-- Source will be inserted here -->
                     </li>
                 </ul>
@@ -213,7 +233,7 @@
                     </li>
                     <li class="p-4 bg-green-50 border border-green-200 rounded-lg">
                         <p class="font-medium text-green-800">Contact Details Verification (Critical)</p>
-                        <p class="text-gray-700 mt-1">You will double-check your email address, name spelling, and time zone. All official communications and interview invites will be emailed.</p>
+                        <p class="text-gray-700 mt-1">You will double-check your email address, name spelling, and time zone because all official communications and interview invites will be emailed.</p>
                         <!-- Source will be inserted here -->
                     </li>
                 </ul>
@@ -233,12 +253,12 @@
                 <ul class="space-y-4">
                     <li class="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
                         <p class="font-medium text-indigo-800">Discipline Choice & Details</p>
-                        <p class="text-gray-700 mt-1">You will complete personal details, education history, and list the <strong>Directing discipline</strong> as your primary choice (you may apply to a maximum of two disciplines — check the GradCAS option).</p>
+                        <p class="text-gray-700 mt-1">You will complete personal details, education history, and list the Directing discipline as your primary choice (you may apply to a maximum of two disciplines, check the GradCAS option).</p>
                         <!-- Source will be inserted here -->
                     </li>
                     <li class="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
                         <p class="font-medium text-indigo-800">Film/Project Credits & Links</p>
-                        <p class="text-gray-700 mt-1">You will enter accurate credits for any films/projects (role, dates, URL links) and ensure links are "non-password protected" and remain active through August of the admission year.</p>
+                        <p class="text-gray-700 mt-1">You will enter accurate credits for any films/projects (role, dates, URL links) and ensure links are non-password protected and remain active through August of the admission year.</p>
                         <!-- Source will be inserted here -->
                     </li>
                     <li class="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
@@ -274,7 +294,7 @@
                             <!-- Source will be inserted here -->
                         </li>
                         <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
-                            If requested, order a WES Course-by-Course evaluation. This includes U.S. semester credit equivalents and a GPA on a 4.0 scale.
+                            If requested, order a WES Course-by-Course evaluation. This will include U.S. semester credit equivalents and a GPA on a 4.0 scale.
                             <!-- Source will be inserted here -->
                         </li>
                         <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
@@ -292,7 +312,7 @@
 
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-gray-800 mb-2">Statement of Purpose</h4>
-                    <p class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">You will write a concise Statement of Purpose that explains your cinematic voice, goals, and why AFI will serve your trajectory. Follow AFI’s essay formatting rules (PDF; Times New Roman 12; double-spaced).</p>
+                    <p class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">You will write a concise Statement of Purpose or personal statement that explains your cinematic voice, goals, and why AFI will serve your trajectory; follow AFI’s essay formatting rules (PDF; Times New Roman 12; double-spaced).</p>
                     <!-- Source will be inserted here -->
                 </div>
 
@@ -308,11 +328,11 @@
                             <!-- Source will be inserted here -->
                         </li>
                         <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
-                            <strong>Directing Assignment:</strong> An original short (max 5 minutes) on the assigned theme (e.g., “SECRET”), made specifically for the application. Include a one-page essay analyzing that assignment.
+                            <strong>Directing Assignment:</strong> An original short on the assigned theme (e.g., “SECRET,” max 5 minutes) made specifically for the application; you will include a one-page essay analyzing that assignment.
                             <!-- Source will be inserted here -->
                         </li>
                         <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
-                            Prepare the Moving Image Sample Essay and Directing Assignment Essay (one page each, PDF) with your name/header, discipline, and fall term year as required.
+                            Prepare a Moving Image Sample Essay and Directing Assignment Essay (one page each, PDF) with your name/header, discipline, and fall term year as required.
                             <!-- Source will be inserted here -->
                         </li>
                     </ul>
@@ -321,11 +341,11 @@
                     <h4 class="text-xl font-medium text-gray-800 mb-2">Micro-file and Portal Details (Don't Miss)</h4>
                     <ul class="space-y-3">
                         <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
-                            Use YouTube or Vimeo links (unlisted is okay but "not password protected"). Ensure links do not expire, and you will not change links after submission (AFI will not accept updates).
+                            Use YouTube or Vimeo links (unlisted is okay but "not password protected"). Ensure links do not expire, and you will not change links after submission because AFI will not accept updates.
                             <!-- Source will be inserted here -->
                         </li>
                         <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
-                            Name files and PDFs clearly (e.g., “Sangita_Lastname_Directing_MovingSample_2026.pdf”) so reviewers will easily identify each piece.
+                            Name files and PDFs clearly (e.g., “Sangita_Lastname_Directing_MovingSample_2026.pdf”) so reviewers will easily identify each piece while assembling materials.
                             <!-- Source will be inserted here -->
                         </li>
                     </ul>
@@ -341,10 +361,10 @@
                 { text: 'AFI Conservatory Admissions Requirements', url: 'https://conservatory.afi.com/admissions-requirements' }, // Statement of Purpose
                 { text: 'AFI Conservatory Admissions Requirements', url: 'https://conservatory.afi.com/admissions-requirements' }, // Portfolio - Video Introduction
                 { text: 'AFI Conservatory Admissions Requirements', url: 'https://conservatory.afi.com/admissions-requirements' }, // Portfolio - Moving Image Sample
-                { text: 'AFI Conservatory Admissions Requirements', url: 'https://conservatory.afi.com/admissions-requirements' }, // Portfolio - Directing Assignment
-                { text: 'AFI Conservatory Admissions Requirements', url: 'https://conservatory.afi.com/admissions-requirements' }, // Portfolio - Essays
-                { text: 'AFI Conservatory Admissions Requirements', url: 'https://conservatory.afi.com/admissions-requirements' }, // Micro-file - Links
-                { text: 'AFI Conservatory Admissions Requirements', url: 'https://conservatory.afi.com/admissions-requirements' } // Micro-file - File Naming (Fallback for verified educational guidance)
+                { text: 'AFI Conservatory Admissions Page', url: 'https://conservatory.afi.com/admissions-requirements' }, // Portfolio - Directing Assignment
+                { text: 'AFI Conservatory Admissions Page', url: 'https://conservatory.afi.com/admissions-requirements' }, // Portfolio - Essays
+                { text: 'AFI Conservatory Admissions Page', url: 'https://conservatory.afi.com/admissions-requirements' }, // Micro-file - Links
+                { text: 'AFI Conservatory Admissions Page', url: 'https://conservatory.afi.com/admissions-requirements' } // Micro-file - File Naming (Fallback for verified educational guidance)
             ]
         },
         {
@@ -361,7 +381,7 @@
                     </li>
                     <li class="p-4 bg-orange-50 border border-orange-200 rounded-lg">
                         <p class="font-medium text-orange-800">Confirmation of All Materials</p>
-                        <p class="text-gray-700 mt-1">You will confirm that all letters of recommendation, transcripts and test scores (if applicable) are received by the deadline — "incomplete applications will be ineligible for review."</p>
+                        <p class="text-gray-700 mt-1">You will confirm that all letters of recommendation, transcripts and test scores (if applicable) are received by the deadline. "Incomplete applications will be ineligible for review."</p>
                         <!-- Source will be inserted here -->
                     </li>
                     <li class="p-4 bg-orange-50 border border-orange-200 rounded-lg">
@@ -428,13 +448,13 @@
                     <li class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                         <p class="font-medium text-yellow-800">Sample Practice Prompts</p>
                         <ul class="list-disc list-inside ml-6 mt-2 text-sm text-gray-700">
-                            <li>"Describe the creative choices in your moving image sample and what you would do differently." — Be specific about shot choices, performance direction, and tone. (Practice)
+                            <li>"Describe the creative choices in your moving image sample and what you would do differently." - Be specific about shot choices, performance direction, and tone. (Practice)
                             <!-- Source will be inserted here -->
                             </li>
-                            <li>"Explain how you will collaborate in an all-discipline environment at AFI." — Demonstrate leadership and collaborative examples. (Practice)
+                            <li>"Explain how you will collaborate in an all-discipline environment at AFI." - Demonstrate leadership and collaborative examples. (Practice)
                             <!-- Source will be inserted here -->
                             </li>
-                            <li>"Outline your fundraising/producing strategy for cycle films." — Show practical awareness of budgets and resourcefulness. (Practice)
+                            <li>"Outline your fundraising/producing strategy for cycle films." - Show practical awareness of budgets and resourcefulness. (Practice)
                             <!-- Source will be inserted here -->
                             </li>
                         </ul>
@@ -553,7 +573,7 @@
                     </div>
 
                     <div class="flex justify-center mt-8">
-                        <button onclick="resetInterviewGame()" class="px-6 py-3 bg-primary-color text-white font-semibold rounded-lg shadow-xl hover:bg-opacity-90 transition duration-150">
+                        <button onclick="resetInterviewGame()" class="px-6 py-3 bg-accent-color text-gray-900 font-bold rounded-lg shadow-xl hover:bg-opacity-90 transition duration-150">
                             Restart Practice
                         </button>
                     </div>
@@ -668,7 +688,7 @@
                 <ul class="space-y-4">
                     <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
                         <p class="font-medium text-red-800">Video Link Management (The Biggest Mistake)</p>
-                        <p class="text-gray-700 mt-1">You must "NOT password-protect your video links". Ensure links (YouTube/Vimeo) remain active through August of the admission year. AFI will not accept updates after submission—links will be frozen for the review process.</p>
+                        <p class="text-gray-700 mt-1">You must "NOT password-protect your video links". Ensure links (YouTube/Vimeo) remain active through August of the admission year. AFI will not accept updates after submission, links will be frozen for the review process.</p>
                         <!-- Source will be inserted here -->
                     </li>
                     <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
@@ -688,7 +708,7 @@
                     </li>
                     <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
                         <p class="font-medium text-red-800">File Naming and Merging</p>
-                        <p class="text-gray-700 mt-1">You will label and merge files as requested (some portfolios require merged PDFs and have file size limits) — read discipline-specific upload instructions carefully.</p>
+                        <p class="text-gray-700 mt-1">You will label and merge files as requested (some portfolios require merged PDFs and have file size limits), read discipline-specific upload instructions carefully.</p>
                         <!-- Source will be inserted here -->
                     </li>
                 </ul>
@@ -711,13 +731,13 @@
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-green-700 mb-2">Key Advantages</h4>
                     <ul class="space-y-2 list-disc list-inside ml-4 text-gray-700">
-                        <li>Gain exceptional "mentorship", hands-on production experience, and a strong alumni network.
+                        <li>Gain exceptional "mentorship", hands-on production experience, and a strong alumni network that will accelerate your filmmaking career.
                         <!-- Source will be inserted here -->
                         </li>
                         <li>Build a polished portfolio: You will direct up to "three narrative shorts" in your first year and a thesis in your second.
                         <!-- Source will be inserted here -->
                         </li>
-                        <li>Benefit from industry connections and visibility (AFI's most valuable returns).
+                        <li>Benefit from industry connections and visibility which are among AFI’s most valuable returns on investment.
                         <!-- Source will be inserted here -->
                         </li>
                     </ul>
@@ -726,7 +746,7 @@
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-red-700 mb-2">Key Challenges</h4>
                     <ul class="space-y-2 list-disc list-inside ml-4 text-gray-700">
-                        <li>"Stiff competition" for limited seats and a heavy production workload.
+                        <li>"Stiff competition" for limited seats and a heavy production workload that will demand time, collaboration skills, and financial planning.
                         <!-- Source will be inserted here -->
                         </li>
                         <li>You will encounter cost challenges (living in LA, production costs), but AFI scholarships and third-party funding opportunities may help admitted Fellows.
@@ -737,7 +757,7 @@
 
                 <div class="p-6 bg-primary-color text-white rounded-xl shadow-lg">
                     <h4 class="text-xl font-bold mb-2">Final Summary: The Cinematic Road</h4>
-                    <p class="text-sm">You will begin by checking eligibility, creating a GradCAS account, and submitting polished directing materials (a 60-second intro, a 10-minute moving image sample, and a 5-minute directing assignment) with correctly formatted essays and transcripts. You will pay the application fee, ensure TOEFL/IELTS/Duolingo scores (if applicable) are sent to the proper recipient, and keep all video links active and non-password protected. You will be invited to a Zoom interview where you will demonstrate craft, leadership and practical production awareness. If you are offered admission, you will accept, supply any required official transcripts or WES Course-by-Course evaluations, complete visa and enrollment steps, and arrive on campus ready to direct cycle films. In the end, you will have submitted a complete portfolio, succeeded in interview review, and will join the AFI Conservatory Directing program as a Fellow — your career will enter its production phase.</p>
+                    <p class="text-sm">You will begin by checking eligibility, creating a GradCAS account, and submitting polished directing materials (a 60-second intro, a 10-minute moving image sample, and a 5-minute directing assignment) with correctly formatted essays and transcripts. You will pay the application fee, ensure TOEFL/IELTS/Duolingo scores (if applicable) are sent to the proper recipient, and keep all video links active and non-password protected. You will be invited to a Zoom interview where you will demonstrate craft, leadership and practical production awareness. If you are offered admission, you will accept, supply any required official transcripts or WES Course-by-Course evaluations, complete visa and enrollment steps, and arrive on campus ready to direct cycle films. In the end, you will have submitted a complete portfolio, succeeded in interview review, and will join the AFI Conservatory Directing program as a Fellow, your career will enter its production phase.</p>
                     <!-- Source will be inserted here -->
                 </div>
             `,
@@ -775,7 +795,7 @@
             const buttonHtml = `
                 <a href="${source.url}" target="_blank" rel="noopener noreferrer" class="source-link inline-flex items-center text-xs font-medium text-white bg-primary-color hover:bg-opacity-90 rounded-full px-3 py-1 mt-2 transition duration-150 shadow-md mr-2">
                     <span class="source-icon"></span>
-                    Official Link Source: ${source.text.split('—').pop().trim()}
+                    <span class="source-link-text">Official Link Source: ${source.text.split('—').pop().trim()}</span>
                 </a>
             `;
 
