@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFI Directing Program Application Guide - Sangita's Roadmap</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font and Calligraphy Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Inter Font and Calligraphy Font --><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #155E75; /* Dark Teal for professionalism */
@@ -19,6 +18,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--light-bg);
+            font-size: 1.25rem; /* Increased base font size */
         }
 
         /* Custom calligraphy class */
@@ -62,6 +62,17 @@
             pointer-events: auto; /* Allow clicks on active slide */
         }
 
+        /* Floating/Lift effect for list items */
+        .animated-list-item {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border-left-width: 8px; /* Thicker accent bar */
+        }
+        .animated-list-item:hover {
+            transform: translateY(-5px); /* Stronger floating effect */
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
         /* Styles for the Source Button Icon */
         .source-icon {
             display: inline-block;
@@ -70,7 +81,7 @@
             margin-right: 0.25rem;
             vertical-align: middle;
             /* SVG for link/external icon, set to the accent color stroke (Purple) */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B5CF6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B5CF6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
         }
 
         /* Custom CSS for prompt tiles (Cricket style elements) */
@@ -87,32 +98,33 @@
         .source-link-text {
             color: var(--link-text-color); /* Dark Purple */
         }
+        
+        /* Ensure major text elements scale up */
+        h1, h2, h3 { font-size: 1.875rem; } /* Default Tailwind lg */
+        .text-2xl { font-size: 2.25rem; }
+        .text-3xl { font-size: 3rem; }
+
     </style>
 </head>
 <body class="min-h-screen">
 
 <div id="app" class="flex flex-col lg:flex-row min-h-screen">
-    <!-- Sidebar Navigation -->
-    <nav class="lg:w-72 bg-white shadow-xl lg:flex-shrink-0 custom-scrollbar overflow-y-auto">
+    <!-- Sidebar Navigation --><nav class="lg:w-72 bg-white shadow-xl lg:flex-shrink-0 custom-scrollbar overflow-y-auto">
         <div class="p-6 border-b-4 border-primary-color bg-gray-50">
             <h1 class="text-2xl font-black text-primary-color tracking-tight">AFI Directing Roadmap</h1>
-            <p class="text-sm text-gray-500 mt-1">For Fellow Sangita</p>
+            <p class="text-base text-gray-500 mt-1">For Fellow Sangita</p>
         </div>
         <ul id="nav-list" class="py-2">
-            <!-- Navigation items will be dynamically inserted here -->
-        </ul>
+            <!-- Navigation items will be dynamically inserted here --></ul>
     </nav>
 
-    <!-- Main Content Area -->
-    <main class="flex-grow p-4 lg:p-8 overflow-hidden">
+    <!-- Main Content Area --><main class="flex-grow p-4 lg:p-8 overflow-hidden">
         <div id="content-container" class="relative bg-white p-6 md:p-10 shadow-2xl rounded-xl custom-scrollbar h-full lg:h-[calc(100vh-6rem)] overflow-y-auto">
-            <!-- Content slides will be dynamically inserted here -->
-        </div>
+            <!-- Content slides will be dynamically inserted here --></div>
     </main>
 </div>
 
-<!-- Subtle Signature Element -->
-<div class="fixed bottom-4 right-4 text-gray-500 text-sm calligraphy z-50 opacity-70">
+<!-- Subtle Signature Element --><div class="fixed bottom-4 right-4 text-gray-500 text-base calligraphy z-50 opacity-70">
     Made by Mayur Desale
 </div>
 
@@ -163,17 +175,19 @@
             icon: '🎬',
             content: `
                 <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Welcome, Future Filmmaker! Your Journey to AFI Begins.</h2>
-                <p class="text-lg text-gray-600 mb-4">This roadmap is dedicated to you, Sangita, as you embark on the ambitious and rewarding process of applying to the prestigious AFI Conservatory Directing program. AFI is where cinematic legends are forged, and every great journey starts with a perfect plan.</p>
-                <p class="text-lg text-gray-600 mb-6">Embrace the challenge of the application—it’s your first test of creative focus and determination. Remember, your **vision** is your most powerful tool. The next two years at AFI will transform your portfolio with multiple narrative projects. Use this guide to meticulously track every step and deadline.</p>
-                <div class="p-4 bg-yellow-100 border-l-4 border-yellow-400 rounded-lg text-yellow-800">
-                    <p class="font-bold">Focus Points for Success:</p>
-                    <ul class="list-disc list-inside ml-4 text-sm mt-1">
+                <p class="text-xl text-gray-600 mb-6">This isn't just an application; it's the **first scene of your directorial career**, you're applying to one of the world's most prestigious film conservatories, AFI, where legends are made. This digital roadmap is dedicated to you, Sangita, as you embark on this ambitious and rewarding process.</p>
+                
+                <p class="text-xl text-gray-600 mb-6">The next few months will challenge your creative focus and determination. Remember, your unique **'vision'** is your most powerful asset. Every piece of your portfolio—from your moving image sample to your interview—must clearly articulate the filmmaker you are destined to become. We've broken down this cinematic quest into manageable steps. Let's make this happen!</p>
+                
+                <div class="p-6 bg-yellow-100 border-l-4 border-yellow-400 rounded-lg text-yellow-800 shadow-md">
+                    <p class="font-bold text-xl">Your Focus Points for Success:</p>
+                    <ul class="list-disc list-inside ml-4 text-lg mt-2">
                         <li>Creative Portfolio (Sample & Assignment) – Showcase your unique directorial voice.</li>
                         <li>Interview Performance – Articulate your craft and leadership clearly.</li>
                         <li>Meticulous Documentation – Leave no detail unchecked.</li>
                     </ul>
                 </div>
-                <p class="text-md text-gray-500 mt-6 italic">We believe in your story. Let's make this happen.</p>
+                <p class="text-lg text-gray-500 mt-6 italic">Trust the process. Your story is ready to be told.</p>
             `,
             sources: [
                 { text: 'AFI Conservatory Official Admissions Page', url: 'https://conservatory.afi.com/directing/' }
@@ -184,28 +198,25 @@
             title: 'Step 1: Checking Eligibility & Requirements',
             icon: '✅',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Confirming Readiness</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Confirming Readiness</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                        <p class="font-medium text-blue-800">Directing Experience (Mandatory)</p>
-                        <p class="text-gray-700 mt-1">You must confirm that you are eligible by having directed a narrative project where you are credited as the director (AFI requires directed narrative work for Directing applicants).</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                        <p class="font-medium text-blue-800">English Proficiency Test (If Applicable)</p>
-                        <p class="text-gray-700 mt-1">You will check language requirements and submit an English proficiency test (TOEFL/IELTS/Duolingo) if English is not your native language. You must meet or exceed AFI’s minimum scores:</p>
-                        <ul class="list-disc list-inside ml-6 mt-2 text-sm text-gray-600">
+                    <li class="animated-list-item p-6 border-l-sky-500 bg-sky-50 rounded-lg shadow-md hover:border-l-sky-700">
+                        <p class="font-medium text-sky-800 text-xl">Directing Experience (Mandatory)</p>
+                        <p class="text-lg text-gray-700 mt-2">You must confirm that you are eligible by having directed a narrative project where you are credited as the director (AFI requires directed narrative work for Directing applicants).</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-sky-500 bg-sky-50 rounded-lg shadow-md hover:border-l-sky-700">
+                        <p class="font-medium text-sky-800 text-xl">English Proficiency Test (If Applicable)</p>
+                        <p class="text-lg text-gray-700 mt-2">You will check language requirements and submit an English proficiency test (TOEFL/IELTS/Duolingo) if English is not your native language. You must meet or exceed AFI’s minimum scores:</p>
+                        <ul class="list-disc list-inside ml-6 mt-3 text-base text-gray-600">
                             <li>TOEFL iBT: 100</li>
                             <li>IELTS: 7.0</li>
                             <li>Duolingo: 130</li>
                         </ul>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                        <p class="font-medium text-blue-800">Document Readiness</p>
-                        <p class="text-gray-700 mt-1">You must verify that all transcripts and supporting documents (translated to English if needed) will be available to upload to GradCAS and later provide official documents if admitted.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-sky-500 bg-sky-50 rounded-lg shadow-md hover:border-l-sky-700">
+                        <p class="font-medium text-sky-800 text-xl">Document Readiness</p>
+                        <p class="text-lg text-gray-700 mt-2">You must verify that all transcripts and supporting documents (translated to English if needed) will be available to upload to GradCAS and later provide official documents if admitted.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -219,23 +230,20 @@
             title: 'Step 2: Creating the AFI Application Account',
             icon: '⚙️',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">The GradCAS Portal Setup</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">The GradCAS Portal Setup</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <p class="font-medium text-green-800">Account Creation</p>
-                        <p class="text-gray-700 mt-1">You will create a GradCAS account (AFI uses GradCAS for applications) and register for the AFI application through that portal.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <p class="font-medium text-green-800">Application Fee & Records</p>
-                        <p class="text-gray-700 mt-1">You will prepare to pay the application fee (<strong>$100</strong>) via the GradCAS/AFI instructions and keep your receipt screenshot for records.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <p class="font-medium text-green-800">Contact Details Verification (Critical)</p>
-                        <p class="text-gray-700 mt-1">You will double-check your email address, name spelling, and time zone because all official communications and interview invites will be emailed.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-emerald-500 bg-emerald-50 rounded-lg shadow-md hover:border-l-emerald-700">
+                        <p class="font-medium text-emerald-800 text-xl">Account Creation</p>
+                        <p class="text-lg text-gray-700 mt-2">You will create a GradCAS account (AFI uses GradCAS for applications) and register for the AFI application through that portal.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-emerald-500 bg-emerald-50 rounded-lg shadow-md hover:border-l-emerald-700">
+                        <p class="font-medium text-emerald-800 text-xl">Application Fee & Records</p>
+                        <p class="text-lg text-gray-700 mt-2">You will prepare to pay the application fee (<strong>$100</strong>) via the GradCAS/AFI instructions and keep your receipt screenshot for records.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-emerald-500 bg-emerald-50 rounded-lg shadow-md hover:border-l-emerald-700">
+                        <p class="font-medium text-emerald-800 text-xl">Contact Details Verification (Critical)</p>
+                        <p class="text-lg text-gray-700 mt-2">You will double-check your email address, name spelling, and time zone because all official communications and interview invites will be emailed.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -249,23 +257,20 @@
             title: 'Step 3: Filling Out the Online Form',
             icon: '📝',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Data Entry and Core Information</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Data Entry and Core Information</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
-                        <p class="font-medium text-indigo-800">Discipline Choice & Details</p>
-                        <p class="text-gray-700 mt-1">You will complete personal details, education history, and list the Directing discipline as your primary choice (you may apply to a maximum of two disciplines, check the GradCAS option).</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
-                        <p class="font-medium text-indigo-800">Film/Project Credits & Links</p>
-                        <p class="text-gray-700 mt-1">You will enter accurate credits for any films/projects (role, dates, URL links) and ensure links are non-password protected and remain active through August of the admission year.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
-                        <p class="font-medium text-indigo-800">Recommenders’ Information</p>
-                        <p class="text-gray-700 mt-1">You will add recommenders’ contact info so letters of recommendation will be submitted electronically to GradCAS before the deadline.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-indigo-500 bg-indigo-50 rounded-lg shadow-md hover:border-l-indigo-700">
+                        <p class="font-medium text-indigo-800 text-xl">Discipline Choice and Details</p>
+                        <p class="text-lg text-gray-700 mt-2">You will complete personal details, education history, and list the Directing discipline as your primary choice (you may apply to a maximum of two disciplines, check the GradCAS option).</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-indigo-500 bg-indigo-50 rounded-lg shadow-md hover:border-l-indigo-700">
+                        <p class="font-medium text-indigo-800 text-xl">Film/Project Credits & Links</p>
+                        <p class="text-lg text-gray-700 mt-2">You will enter accurate credits for any films/projects (role, dates, URL links) and ensure links are non-password protected and remain active through August of the admission year.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-indigo-500 bg-indigo-50 rounded-lg shadow-md hover:border-l-indigo-700">
+                        <p class="font-medium text-indigo-800 text-xl">Recommenders’ Information</p>
+                        <p class="text-lg text-gray-700 mt-2">You will add recommenders’ contact info so letters of recommendation will be submitted electronically to GradCAS before the deadline.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -279,75 +284,62 @@
             title: 'Step 4: Preparing Required Documents',
             icon: '📄',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Transcripts, WES, and Creative Essays</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Transcripts, WES, and Creative Essays</h3>
 
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-gray-800 mb-2">Transcripts & Evaluation (WES)</h4>
                     <ul class="space-y-3">
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             Upload <strong>unofficial transcripts</strong> (with English translations attached if originals are not in English) to GradCAS during application.
-                            <!-- Source will be inserted here -->
-                        </li>
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                            <!-- Source will be inserted here --></li>
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             Plan to provide official transcripts or a "WES Course-by-Course evaluation" if requested after admission (many institutions ask for formal credential evaluation for matriculation).
-                            <!-- Source will be inserted here -->
-                            <!-- Source will be inserted here -->
-                        </li>
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                            <!-- Source will be inserted here --><!-- Source will be inserted here --></li>
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             If requested, order a WES Course-by-Course evaluation. This will include U.S. semester credit equivalents and a GPA on a 4.0 scale.
-                            <!-- Source will be inserted here -->
-                        </li>
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                            <!-- Source will be inserted here --></li>
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             Gather the exact documents WES requires (official sealed transcripts/digitized verifications) and follow WES instructions for submission carefully.
-                            <!-- Source will be inserted here -->
-                        </li>
+                            <!-- Source will be inserted here --></li>
                     </ul>
                 </div>
 
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-gray-800 mb-2">Recommendation Letters</h4>
-                    <p class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">You will request "2–3 strong recommendation letters" from directors/producers or faculty who can attest to your directing and leadership. Ask them early and provide a simple brief and deadlines.</p>
-                    <!-- Source will be inserted here -->
-                </div>
+                    <p class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">You will request "2–3 strong recommendation letters" from directors/producers or faculty who can attest to your directing and leadership. Ask them early and provide a simple brief and deadlines.</p>
+                    <!-- Source will be inserted here --></div>
 
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-gray-800 mb-2">Statement of Purpose</h4>
-                    <p class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">You will write a concise Statement of Purpose or personal statement that explains your cinematic voice, goals, and why AFI will serve your trajectory; follow AFI’s essay formatting rules (PDF; Times New Roman 12; double-spaced).</p>
-                    <!-- Source will be inserted here -->
-                </div>
+                    <p class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">You will write a concise Statement of Purpose or personal statement that explains your cinematic voice, goals, and why AFI will serve your trajectory; follow AFI’s essay formatting rules (PDF; Times New Roman 12; double-spaced).</p>
+                    <!-- Source will be inserted here --></div>
 
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-gray-800 mb-2">Creative Portfolio Materials (Directing Specifics)</h4>
                     <ul class="space-y-3">
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             <strong>Video Introduction:</strong> A 60-second one-take video stating who you are and what you will gain at AFI. Do not password protect the link and keep it active through August of the admission year.
-                            <!-- Source will be inserted here -->
-                        </li>
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                            <!-- Source will be inserted here --></li>
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             <strong>Moving Image Sample:</strong> Max 10 continuous minutes directed solely by you, with a one-sentence logline and English subtitles if needed. Submissions longer than 10 minutes will not be considered.
-                            <!-- Source will be inserted here -->
-                        </li>
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                            <!-- Source will be inserted here --></li>
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             <strong>Directing Assignment:</strong> An original short on the assigned theme (e.g., “SECRET,” max 5 minutes) made specifically for the application; you will include a one-page essay analyzing that assignment.
-                            <!-- Source will be inserted here -->
-                        </li>
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                            <!-- Source will be inserted here --></li>
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             Prepare a Moving Image Sample Essay and Directing Assignment Essay (one page each, PDF) with your name/header, discipline, and fall term year as required.
-                            <!-- Source will be inserted here -->
-                        </li>
+                            <!-- Source will be inserted here --></li>
                     </ul>
                 </div>
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-gray-800 mb-2">Micro-file and Portal Details (Don't Miss)</h4>
                     <ul class="space-y-3">
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             Use YouTube or Vimeo links (unlisted is okay but "not password protected"). Ensure links do not expire, and you will not change links after submission because AFI will not accept updates.
-                            <!-- Source will be inserted here -->
-                        </li>
-                        <li class="p-3 bg-red-50 border border-red-200 rounded-lg text-sm">
+                            <!-- Source will be inserted here --></li>
+                        <li class="animated-list-item p-4 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700 text-lg">
                             Name files and PDFs clearly (e.g., “Sangita_Lastname_Directing_MovingSample_2026.pdf”) so reviewers will easily identify each piece while assembling materials.
-                            <!-- Source will be inserted here -->
-                        </li>
+                            <!-- Source will be inserted here --></li>
                     </ul>
                 </div>
             `,
@@ -372,23 +364,20 @@
             title: 'Step 5: Submitting Application & Fee',
             icon: '🚀',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Final Submission Checklist</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Final Submission Checklist</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-orange-50 border border-orange-200 rounded-lg">
-                        <p class="font-medium text-orange-800">Submission and Fee Payment</p>
-                        <p class="text-gray-700 mt-1">You will submit the completed GradCAS application and pay the "$100 application fee" before the posted deadline (applications and portfolios will be due by the deadline listed for the application year).</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-orange-50 border border-orange-200 rounded-lg">
-                        <p class="font-medium text-orange-800">Confirmation of All Materials</p>
-                        <p class="text-gray-700 mt-1">You will confirm that all letters of recommendation, transcripts and test scores (if applicable) are received by the deadline. "Incomplete applications will be ineligible for review."</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-orange-50 border border-orange-200 rounded-lg">
-                        <p class="font-medium text-orange-800">Keep Records</p>
-                        <p class="text-gray-700 mt-1">You will keep screenshots of the submission confirmation and payment receipt in case of technical issues.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-orange-500 bg-orange-50 rounded-lg shadow-md hover:border-l-orange-700">
+                        <p class="font-medium text-orange-800 text-xl">Submission and Fee Payment</p>
+                        <p class="text-lg text-gray-700 mt-2">You will submit the completed GradCAS application and pay the "$100 application fee" before the posted deadline (applications and portfolios will be due by the deadline listed for the application year).</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-orange-500 bg-orange-50 rounded-lg shadow-md hover:border-l-orange-700">
+                        <p class="font-medium text-orange-800 text-xl">Confirmation of All Materials</p>
+                        <p class="text-lg text-gray-700 mt-2">You will confirm that all letters of recommendation, transcripts and test scores (if applicable) are received by the deadline. "Incomplete applications will be ineligible for review."</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-orange-500 bg-orange-50 rounded-lg shadow-md hover:border-l-orange-700">
+                        <p class="font-medium text-orange-800 text-xl">Keep Records</p>
+                        <p class="text-lg text-gray-700 mt-2">You will keep screenshots of the submission confirmation and payment receipt in case of technical issues.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -402,18 +391,16 @@
             title: 'Step 6: Verification and Waiting Period',
             icon: '⏳',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Monitoring and Timelines</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Monitoring and Timelines</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-                        <p class="font-medium text-purple-800">Application Timeline</p>
-                        <p class="text-gray-700 mt-1">AFI's timeline: Applications are typically due "December 1" (check the exact date). Final admissions notifications will be emailed "mid-March" (e.g., March 16, 2026).</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-                        <p class="font-medium text-purple-800">Status Updates</p>
-                        <p class="text-gray-700 mt-1">You will understand that AFI will not provide individual application status updates. You must monitor your email (including spam/junk folders) for interview invitations.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-purple-500 bg-purple-50 rounded-lg shadow-md hover:border-l-purple-700">
+                        <p class="font-medium text-purple-800 text-xl">Application Timeline</p>
+                        <p class="text-lg text-gray-700 mt-2">AFI's timeline: Applications are typically due "December 1" (check the exact date). Final admissions notifications will be emailed "mid-March" (e.g., March 16, 2026).</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-purple-500 bg-purple-50 rounded-lg shadow-md hover:border-l-purple-700">
+                        <p class="font-medium text-purple-800 text-xl">Status Updates</p>
+                        <p class="text-lg text-gray-700 mt-2">You will understand that AFI will not provide individual application status updates. You must monitor your email (including spam/junk folders) for interview invitations.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -426,37 +413,29 @@
             title: 'Step 7: Interview or Creative Review Stage',
             icon: '🎙️',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">The Final Creative Hurdle (The Interview)</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">The Final Creative Hurdle (The Interview)</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                        <p class="font-medium text-yellow-800">Interview Invitation & Format</p>
-                        <p class="text-gray-700 mt-1">You will expect interviews to take place via "Zoom" if invited. AFI invites only completed application candidates to interview. Invitations typically sent in December–January.</p>
-                        <!-- Source will be inserted here -->
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                        <p class="font-medium text-yellow-800">Preparation Focus</p>
-                        <p class="text-gray-700 mt-1">You will prepare to discuss your moving image sample, directing assignment, creative influences, and production choices. Bring clear, concise analysis and be ready to explain failures and tradeoffs in your own work.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                        <p class="font-medium text-yellow-800">Expected Mindset & Craft</p>
-                        <p class="text-700 mt-1">Adopt the expected mindset: honest self-analysis, creative leadership, and a filmmaker’s problem-solving orientation. Avoid overlong theoretical answers and focus on "concrete craft" (camera, blocking, actor direction decisions).</p>
-                        <!-- Source will be inserted here -->
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                        <p class="font-medium text-yellow-800">Sample Practice Prompts</p>
-                        <ul class="list-disc list-inside ml-6 mt-2 text-sm text-gray-700">
+                    <li class="animated-list-item p-6 border-l-yellow-500 bg-yellow-50 rounded-lg shadow-md hover:border-l-yellow-700">
+                        <p class="font-medium text-yellow-800 text-xl">Interview Invitation & Format</p>
+                        <p class="text-lg text-gray-700 mt-2">You will expect interviews to take place via "Zoom" if invited. AFI invites only completed application candidates to interview. Invitations typically sent in December–January.</p>
+                        <!-- Source will be inserted here --><!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-yellow-500 bg-yellow-50 rounded-lg shadow-md hover:border-l-yellow-700">
+                        <p class="font-medium text-yellow-800 text-xl">Preparation Focus</p>
+                        <p class="text-lg text-gray-700 mt-2">You will prepare to discuss your moving image sample, directing assignment, creative influences, and production choices. Bring clear, concise analysis and be ready to explain failures and tradeoffs in your own work.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-yellow-500 bg-yellow-50 rounded-lg shadow-md hover:border-l-yellow-700">
+                        <p class="font-medium text-yellow-800 text-xl">Expected Mindset & Craft</p>
+                        <p class="text-lg text-gray-700 mt-2">Adopt the expected mindset: honest self-analysis, creative leadership, and a filmmaker’s problem-solving orientation. Avoid overlong theoretical answers and focus on "concrete craft" (camera, blocking, actor direction decisions).</p>
+                        <!-- Source will be inserted here --><!-- Source will be inserted here --></li>
+                    <li class="p-4 bg-gray-100 rounded-lg border border-gray-200 mt-4">
+                        <p class="font-medium text-gray-800 text-lg mb-2">Sample Practice Prompts</p>
+                        <ul class="list-disc list-inside ml-4 text-base text-gray-700 space-y-1">
                             <li>"Describe the creative choices in your moving image sample and what you would do differently." - Be specific about shot choices, performance direction, and tone. (Practice)
-                            <!-- Source will be inserted here -->
-                            </li>
+                            <!-- Source will be inserted here --></li>
                             <li>"Explain how you will collaborate in an all-discipline environment at AFI." - Demonstrate leadership and collaborative examples. (Practice)
-                            <!-- Source will be inserted here -->
-                            </li>
+                            <!-- Source will be inserted here --></li>
                             <li>"Outline your fundraising/producing strategy for cycle films." - Show practical awareness of budgets and resourcefulness. (Practice)
-                            <!-- Source will be inserted here -->
-                            </li>
+                            <!-- Source will be inserted here --></li>
                         </ul>
                     </li>
                 </ul>
@@ -478,22 +457,19 @@
             icon: '🎮',
             content: `
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">AFI Interview Simulation: Duolingo Style Practice</h3>
-                <p class="text-gray-600 mb-6">Choose a theme below to start your 60-second timed response. Focus on clear, concise English and specific directing craft.</p>
+                <p class="text-xl text-gray-600 mb-6">Choose a theme below to start your 60-second timed response. Focus on clear, concise English and specific directing craft.</p>
 
-                <!-- Initial Prompt Selection Screen -->
-                <div id="prompt-selection" class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 transition-opacity duration-500">
-                    <!-- Prompt Cards will be dynamically inserted here -->
-                </div>
+                <!-- Initial Prompt Selection Screen --><div id="prompt-selection" class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 transition-opacity duration-500">
+                    <!-- Prompt Cards will be dynamically inserted here --></div>
 
-                <!-- Start Answer Screen (Intermediate) -->
-                <div id="start-screen" class="hidden transition-opacity duration-500 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                <!-- Start Answer Screen (Intermediate) --><div id="start-screen" class="hidden transition-opacity duration-500 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
                     <p class="text-lg font-medium text-gray-500 mb-2">Question Theme: <span id="start-question-label" class="text-primary-color font-semibold"></span></p>
                     
                     <div class="bg-gray-50 p-4 rounded-lg mb-6 border border-gray-100">
                         <p class="text-xl italic text-gray-800" id="start-question-prompt"></p>
                     </div>
 
-                    <p class="text-md text-red-600 font-semibold mb-4">Rule: You will have 60 seconds to type your answer after the timer starts.</p>
+                    <p class="text-lg text-red-600 font-semibold mb-4">Rule: You will have 60 seconds to type your answer after the timer starts.</p>
 
                     <div class="flex justify-center">
                         <button onclick="startTimerAndInput()" class="px-8 py-4 bg-accent-color text-gray-900 font-bold rounded-lg shadow-xl hover:bg-opacity-90 transition duration-150 transform hover:scale-[1.01]">
@@ -502,21 +478,20 @@
                     </div>
                 </div>
 
-                <!-- Timed Answer Screen -->
-                <div id="answer-screen" class="hidden transition-opacity duration-500 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+                <!-- Timed Answer Screen --><div id="answer-screen" class="hidden transition-opacity duration-500 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
                     <div class="flex justify-between items-center mb-4">
-                        <p class="text-sm font-medium text-gray-500" id="current-question-label">Question Theme:</p>
+                        <p class="text-lg font-medium text-gray-500" id="current-question-label">Question Theme:</p>
                         <div class="flex items-center space-x-2">
-                            <span class="text-xl font-bold text-primary-color" id="timer-display">60</span>
-                            <span class="text-gray-500">seconds left</span>
+                            <span class="text-2xl font-bold text-primary-color" id="timer-display">60</span>
+                            <span class="text-lg text-gray-500">seconds left</span>
                         </div>
                     </div>
                     <div class="bg-gray-50 p-4 rounded-lg mb-4 border border-gray-100">
-                        <p class="text-lg italic text-gray-800" id="current-question-prompt-active"></p>
+                        <p class="text-xl italic text-gray-800" id="current-question-prompt-active"></p>
                     </div>
                     
                     <form id="timed-answer-form">
-                        <textarea id="answer-input" rows="8" class="shadow-inner focus:ring-accent-color focus:border-accent-color mt-1 block w-full rounded-lg border-gray-300 p-4 text-gray-800 disabled:bg-gray-100" placeholder="Type your concise, craft-focused answer here (60-second limit)..."></textarea>
+                        <textarea id="answer-input" rows="8" class="shadow-inner focus:ring-accent-color focus:border-accent-color mt-1 block w-full rounded-lg border-gray-300 p-4 text-xl text-gray-800 disabled:bg-gray-100" placeholder="Type your concise, craft-focused answer here (60-second limit)..."></textarea>
                         <div class="flex justify-center mt-6">
                             <button type="submit" id="submit-button" class="px-6 py-3 bg-accent-color text-gray-900 font-bold rounded-lg shadow-xl hover:bg-opacity-90 transition duration-150 transform hover:scale-[1.01] disabled:bg-gray-400">
                                 Get Report
@@ -525,51 +500,46 @@
                     </form>
                 </div>
 
-                <!-- Report Screen -->
-                <div id="report-screen" class="hidden mt-8 transition-opacity duration-500 w-full">
+                <!-- Report Screen --><div id="report-screen" class="hidden mt-8 transition-opacity duration-500 w-full">
                     <h3 class="text-3xl font-bold text-primary-color mb-6 border-b pb-2">Interview Performance Detailed Report</h3>
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                         
-                        <!-- Metric Card 1: Score -->
-                        <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-green-500">
-                            <h4 class="text-sm font-semibold text-green-700 uppercase tracking-wider mb-2">Overall Score & Status</h4>
-                            <p class="text-4xl font-black text-green-600" id="report-score">--</p>
-                            <p class="text-xs text-gray-500 mt-1">Simulated result based on key metrics.</p>
+                        <!-- Metric Card 1: Score --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-green-500">
+                            <h4 class="text-lg font-semibold text-green-700 uppercase tracking-wider mb-2">Overall Score & Status</h4>
+                            <p class="text-5xl font-black text-green-600" id="report-score">--</p>
+                            <p class="text-base text-gray-500 mt-1">Simulated result based on key metrics.</p>
                         </div>
 
-                        <!-- Metric Card 2: Word Count -->
-                        <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-primary-color">
-                            <h4 class="text-sm font-semibold text-primary-color uppercase tracking-wider mb-2">Words Written / Time Taken</h4>
-                            <p class="text-4xl font-black text-gray-800" id="report-words-time">--</p>
-                            <p class="text-xs text-gray-500 mt-1">Target is 30-50 words within 60 seconds.</p>
+                        <!-- Metric Card 2: Word Count --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-primary-color">
+                            <h4 class="text-lg font-semibold text-primary-color uppercase tracking-wider mb-2">Words Written / Time Taken</h4>
+                            <p class="text-5xl font-black text-gray-800" id="report-words-time">--</p>
+                            <p class="text-base text-gray-500 mt-1">Target is 30-50 words within 60 seconds.</p>
                         </div>
 
-                        <!-- Metric Card 3: Panel Insight -->
-                        <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-accent-color">
-                            <h4 class="text-sm font-semibold text-accent-color uppercase tracking-wider mb-2">AFI Panel Insight</h4>
-                            <p class="text-sm text-gray-700" id="report-panel-insight">The panel would look for... </p>
+                        <!-- Metric Card 3: Panel Insight --><div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-accent-color">
+                            <h4 class="text-lg font-semibold text-accent-color uppercase tracking-wider mb-2">AFI Panel Insight</h4>
+                            <p class="text-base text-gray-700" id="report-panel-insight">The panel would look for... </p>
                         </div>
                     </div>
 
-                    <!-- Detailed Analysis -->
-                    <div class="mt-4 bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
-                        <h4 class="text-xl font-bold text-gray-800 mb-4">Detailed Analysis & Improvement Areas</h4>
+                    <!-- Detailed Analysis --><div class="mt-4 bg-gray-50 p-6 rounded-xl shadow-inner border border-gray-200">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4">Detailed Analysis & Improvement Areas</h4>
                         
                         <div class="space-y-4">
                             <div>
-                                <h5 class="font-semibold text-primary-color">1. Fluency & Pacing</h5>
-                                <p class="text-sm text-gray-700" id="report-fluency">Analysis on word count and clarity.</p>
+                                <h5 class="font-semibold text-primary-color text-xl">1. Fluency & Pacing</h5>
+                                <p class="text-lg text-gray-700" id="report-fluency">Analysis on word count and clarity.</p>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-primary-color">2. Grammar & Vocabulary</h5>
-                                <p class="text-sm text-gray-700" id="report-grammar">Common grammatical errors and suggestions.</p>
+                                <h5 class="font-semibold text-primary-color text-xl">2. Grammar & Vocabulary</h5>
+                                <p class="text-lg text-gray-700" id="report-grammar">Common grammatical errors and suggestions.</p>
                             </div>
                             <div>
-                                <h5 class="font-semibold text-primary-color">3. Craft Specificity</h5>
-                                <p class="text-sm text-gray-700" id="report-craft">Was the answer focused on directing craft (blocking, performance, camera)?</p>
+                                <h5 class="font-semibold text-primary-color text-xl">3. Craft Specificity</h5>
+                                <p class="text-lg text-gray-700" id="report-craft">Was the answer focused on directing craft (blocking, performance, camera)?</p>
                             </div>
                         </div>
-                        <p class="mt-6 text-xs text-red-500 italic">Disclaimer: This is an automated simulation. For best results, seek real-world coaching.</p>
+                        <p class="mt-6 text-sm text-red-500 italic">Disclaimer: This is an automated simulation. For best results, seek real-world coaching.</p>
                     </div>
 
                     <div class="flex justify-center mt-8">
@@ -586,18 +556,16 @@
             title: 'Step 8: Admission Decision & Offer',
             icon: '💌',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">The Verdict</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">The Verdict</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-teal-50 border border-teal-200 rounded-lg">
-                        <p class="font-medium text-teal-800">Decision Date</p>
-                        <p class="text-gray-700 mt-1">You will receive the formal admission decision by email on the published notification date (AFI will publish the exact date for each cycle; e.g., March 16, 2026).</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-teal-50 border border-teal-200 rounded-lg">
-                        <p class="font-medium text-teal-800">Acceptance & Enrollment</p>
-                        <p class="text-gray-700 mt-1">You will, if admitted, follow AFI’s instructions to confirm your acceptance, provide any additional official transcripts/WES evaluations, and complete enrollment forms by AFI’s deadlines.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-teal-500 bg-teal-50 rounded-lg shadow-md hover:border-l-teal-700">
+                        <p class="font-medium text-teal-800 text-xl">Decision Date</p>
+                        <p class="text-lg text-gray-700 mt-2">You will receive the formal admission decision by email on the published notification date (AFI will publish the exact date for each cycle; e.g., March 16, 2026).</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-teal-500 bg-teal-50 rounded-lg shadow-md hover:border-l-teal-700">
+                        <p class="font-medium text-teal-800 text-xl">Acceptance & Enrollment</p>
+                        <p class="text-lg text-gray-700 mt-2">You will, if admitted, follow AFI’s instructions to confirm your acceptance, provide any additional official transcripts/WES evaluations, and complete enrollment forms by AFI’s deadlines.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -610,18 +578,16 @@
             title: 'Step 9: Scholarship & Financial Aid',
             icon: '💰',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Funding Your Education</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Funding Your Education</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-cyan-50 border border-cyan-200 rounded-lg">
-                        <p class="font-medium text-cyan-800">AFI Scholarships</p>
-                        <p class="text-gray-700 mt-1">You will note that AFI scholarships will generally be "invite-only" for candidates who have advanced to the interview round. You will complete any scholarship application if invited (AFI will email invitations).</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-cyan-50 border border-cyan-200 rounded-lg">
-                        <p class="font-medium text-cyan-800">Supporting Financial Documents</p>
-                        <p class="text-gray-700 mt-1">You will prepare supporting financial documents (bank statements, sponsor letters) if you apply for merit scholarships or need evidence for visa purposes. You will follow AFI’s specific instructions on timing.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-cyan-500 bg-cyan-50 rounded-lg shadow-md hover:border-l-cyan-700">
+                        <p class="font-medium text-cyan-800 text-xl">AFI Scholarships</p>
+                        <p class="text-lg text-gray-700 mt-2">You will note that AFI scholarships will generally be "invite-only" for candidates who have advanced to the interview round. You will complete any scholarship application if invited (AFI will email invitations).</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-cyan-500 bg-cyan-50 rounded-lg shadow-md hover:border-l-cyan-700">
+                        <p class="font-medium text-cyan-800 text-xl">Supporting Financial Documents</p>
+                        <p class="text-lg text-gray-700 mt-2">You will prepare supporting financial documents (bank statements, sponsor letters) if you apply for merit scholarships or need evidence for visa purposes. You will follow AFI’s specific instructions on timing.</p>
+                        <!-- Source will will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -634,18 +600,16 @@
             title: 'Step 10: Visa and Pre-Arrival Process',
             icon: '✈️',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">International Fellow Checklist</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">International Fellow Checklist</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-pink-50 border border-pink-200 rounded-lg">
-                        <p class="font-medium text-pink-800">Student Visa (F-1) Paperwork</p>
-                        <p class="text-gray-700 mt-1">You will begin the student visa (F-1) paperwork "only after" AFI issues the I-20. You will follow AFI’s international admissions instructions and apply for the F-1 visa with your official acceptance and I-20 form.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-pink-50 border border-pink-200 rounded-lg">
-                        <p class="font-medium text-pink-800">Visa Interview</p>
-                        <p class="text-gray-700 mt-1">You will prepare financial support documents and schedule the visa interview at your local U.S. consulate as soon as you receive the I-20 to allow time for processing.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-pink-500 bg-pink-50 rounded-lg shadow-md hover:border-l-pink-700">
+                        <p class="font-medium text-pink-800 text-xl">Student Visa (F-1) Paperwork</p>
+                        <p class="text-lg text-gray-700 mt-2">You will begin the student visa (F-1) paperwork "only after" AFI issues the I-20. You will follow AFI’s international admissions instructions and apply for the F-1 visa with your official acceptance and I-20 form.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-pink-500 bg-pink-50 rounded-lg shadow-md hover:border-l-pink-700">
+                        <p class="font-medium text-pink-800 text-xl">Visa Interview</p>
+                        <p class="text-lg text-gray-700 mt-2">You will prepare financial support documents and schedule the visa interview at your local U.S. consulate as soon as you receive the I-20 to allow time for processing.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -658,19 +622,16 @@
             title: 'Step 11: Final Enrollment Steps',
             icon: '🎓',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Ready for the Start of Class</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Ready for the Start of Class</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-lime-50 border border-lime-200 rounded-lg">
-                        <p class="font-medium text-lime-800">Enrollment Tasks</p>
-                        <p class="text-gray-700 mt-1">You will complete enrollment tasks (tuition deposits, health forms, orientation registration) per AFI instructions and the Academic Calendar (classes typically begin in mid-August).</p>
-                        <!-- Source will be inserted here -->
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-lime-50 border border-lime-200 rounded-lg">
-                        <p class="font-medium text-lime-800">Pre-Arrival Logistics</p>
-                        <p class="text-gray-700 mt-1">You will attend AFI orientation, verify local housing/transport, and prepare production equipment lists or insurance requirements if asked.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-lime-500 bg-lime-50 rounded-lg shadow-md hover:border-l-lime-700">
+                        <p class="font-medium text-lime-800 text-xl">Enrollment Tasks</p>
+                        <p class="text-lg text-gray-700 mt-2">You will complete enrollment tasks (tuition deposits, health forms, orientation registration) per AFI instructions and the Academic Calendar (classes typically begin in mid-August).</p>
+                        <!-- Source will be inserted here --><!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-lime-500 bg-lime-50 rounded-lg shadow-md hover:border-l-lime-700">
+                        <p class="font-medium text-lime-800 text-xl">Pre-Arrival Logistics</p>
+                        <p class="text-lg text-gray-700 mt-2">You will attend AFI orientation, verify local housing/transport, and prepare production equipment lists or insurance requirements if asked.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -684,33 +645,28 @@
             title: 'Step 12: Lesser-Known Tips & Mistakes',
             icon: '⚠️',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Critical Details to Remember (Avoid These Mistakes)</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Critical Details to Remember (Avoid These Mistakes)</h3>
                 <ul class="space-y-4">
-                    <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
-                        <p class="font-medium text-red-800">Video Link Management (The Biggest Mistake)</p>
-                        <p class="text-gray-700 mt-1">You must "NOT password-protect your video links". Ensure links (YouTube/Vimeo) remain active through August of the admission year. AFI will not accept updates after submission, links will be frozen for the review process.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
-                        <p class="font-medium text-red-800">AI/LLM Disclosure</p>
-                        <p class="text-gray-700 mt-1">You will disclose any use of AI/LLM tools in essays or creative work. AFI requires disclosure, and non-disclosure may disqualify you.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
-                        <p class="font-medium text-red-800">Essay Formatting</p>
-                        <p class="text-gray-700 mt-1">Ensure essays are PDFs, conventionally formatted (Times New Roman 12, double-spaced), and that each essay includes your name, discipline, and year in the header to avoid administrative misfiling.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
-                        <p class="font-medium text-red-800">Test Score Submission</p>
-                        <p class="text-gray-700 mt-1">You will confirm that TOEFL/IELTS results are sent to GradCAS (use AFI test codes where required) and that Duolingo results are sent directly to AFI if applicable.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
-                    <li class="p-4 bg-red-100 border border-red-400 rounded-lg">
-                        <p class="font-medium text-red-800">File Naming and Merging</p>
-                        <p class="text-gray-700 mt-1">You will label and merge files as requested (some portfolios require merged PDFs and have file size limits), read discipline-specific upload instructions carefully.</p>
-                        <!-- Source will be inserted here -->
-                    </li>
+                    <li class="animated-list-item p-6 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700">
+                        <p class="font-medium text-red-800 text-xl">Video Link Management (The Biggest Mistake)</p>
+                        <p class="text-lg text-gray-700 mt-2">You must "NOT password-protect your video links". Ensure links (YouTube/Vimeo) remain active through August of the admission year. AFI will not accept updates after submission, links will be frozen for the review process.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700">
+                        <p class="font-medium text-red-800 text-xl">AI/LLM Disclosure</p>
+                        <p class="text-lg text-gray-700 mt-2">You will disclose any use of AI/LLM tools in essays or creative work. AFI requires disclosure, and non-disclosure may disqualify you.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700">
+                        <p class="font-medium text-red-800 text-xl">Essay Formatting</p>
+                        <p class="text-lg text-gray-700 mt-2">Ensure essays are PDFs, conventionally formatted (Times New Roman 12, double-spaced), and that each essay includes your name, discipline, and year in the header to avoid administrative misfiling.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700">
+                        <p class="font-medium text-red-800 text-xl">Test Score Submission</p>
+                        <p class="text-lg text-gray-700 mt-2">You will confirm that TOEFL/IELTS results are sent to GradCAS (use AFI test codes where required) and that Duolingo results are sent directly to AFI if applicable.</p>
+                        <!-- Source will be inserted here --></li>
+                    <li class="animated-list-item p-6 border-l-red-500 bg-red-50 rounded-lg shadow-md hover:border-l-red-700">
+                        <p class="font-medium text-red-800 text-xl">File Naming and Merging</p>
+                        <p class="text-lg text-gray-700 mt-2">You will label and merge files as requested (some portfolios require merged PDFs and have file size limits), read discipline-specific upload instructions carefully.</p>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -726,40 +682,34 @@
             title: 'Advantages & Final Summary',
             icon: '✨',
             content: `
-                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Why AFI? Advantages and Challenges</h3>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6">Why AFI? Advantages and Challenges</h3>
 
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-green-700 mb-2">Key Advantages</h4>
-                    <ul class="space-y-2 list-disc list-inside ml-4 text-gray-700">
+                    <ul class="space-y-2 list-disc list-inside ml-4 text-gray-700 text-lg">
                         <li>Gain exceptional "mentorship", hands-on production experience, and a strong alumni network that will accelerate your filmmaking career.
-                        <!-- Source will be inserted here -->
-                        </li>
+                        <!-- Source will be inserted here --></li>
                         <li>Build a polished portfolio: You will direct up to "three narrative shorts" in your first year and a thesis in your second.
-                        <!-- Source will be inserted here -->
-                        </li>
+                        <!-- Source will be inserted here --></li>
                         <li>Benefit from industry connections and visibility which are among AFI’s most valuable returns on investment.
-                        <!-- Source will be inserted here -->
-                        </li>
+                        <!-- Source will be inserted here --></li>
                     </ul>
                 </div>
 
                 <div class="mb-6">
                     <h4 class="text-xl font-medium text-red-700 mb-2">Key Challenges</h4>
-                    <ul class="space-y-2 list-disc list-inside ml-4 text-gray-700">
+                    <ul class="space-y-2 list-disc list-inside ml-4 text-gray-700 text-lg">
                         <li>"Stiff competition" for limited seats and a heavy production workload that will demand time, collaboration skills, and financial planning.
-                        <!-- Source will be inserted here -->
-                        </li>
+                        <!-- Source will be inserted here --></li>
                         <li>You will encounter cost challenges (living in LA, production costs), but AFI scholarships and third-party funding opportunities may help admitted Fellows.
-                        <!-- Source will be inserted here -->
-                        </li>
+                        <!-- Source will be inserted here --></li>
                     </ul>
                 </div>
 
                 <div class="p-6 bg-primary-color text-white rounded-xl shadow-lg">
                     <h4 class="text-xl font-bold mb-2">Final Summary: The Cinematic Road</h4>
-                    <p class="text-sm">You will begin by checking eligibility, creating a GradCAS account, and submitting polished directing materials (a 60-second intro, a 10-minute moving image sample, and a 5-minute directing assignment) with correctly formatted essays and transcripts. You will pay the application fee, ensure TOEFL/IELTS/Duolingo scores (if applicable) are sent to the proper recipient, and keep all video links active and non-password protected. You will be invited to a Zoom interview where you will demonstrate craft, leadership and practical production awareness. If you are offered admission, you will accept, supply any required official transcripts or WES Course-by-Course evaluations, complete visa and enrollment steps, and arrive on campus ready to direct cycle films. In the end, you will have submitted a complete portfolio, succeeded in interview review, and will join the AFI Conservatory Directing program as a Fellow, your career will enter its production phase.</p>
-                    <!-- Source will be inserted here -->
-                </div>
+                    <p class="text-lg">You will begin by checking eligibility, creating a GradCAS account, and submitting polished directing materials (a 60-second intro, a 10-minute moving image sample, and a 5-minute directing assignment) with correctly formatted essays and transcripts. You will pay the application fee, ensure TOEFL/IELTS/Duolingo scores (if applicable) are sent to the proper recipient, and keep all video links active and non-password protected. You will be invited to a Zoom interview where you will demonstrate craft, leadership and practical production awareness. If you are offered admission, you will accept, supply any required official transcripts or WES Course-by-Course evaluations, complete visa and enrollment steps, and arrive on campus ready to direct cycle films. In the end, you will have submitted a complete portfolio, succeeded in interview review, and will join the AFI Conservatory Directing program as a Fellow, your career will enter its production phase.</p>
+                    <!-- Source will be inserted here --></div>
             `,
             sources: [
                 { text: 'AFI Conservatory Official Admissions Page', url: 'https://conservatory.afi.com/' }, // Mentorship, network
@@ -793,7 +743,7 @@
             const searchPattern = '<!-- Source will be inserted here -->';
 
             const buttonHtml = `
-                <a href="${source.url}" target="_blank" rel="noopener noreferrer" class="source-link inline-flex items-center text-xs font-medium text-white bg-primary-color hover:bg-opacity-90 rounded-full px-3 py-1 mt-2 transition duration-150 shadow-md mr-2">
+                <a href="${source.url}" target="_blank" rel="noopener noreferrer" class="source-link inline-flex items-center text-base font-medium bg-primary-color hover:bg-opacity-90 rounded-full px-4 py-2 mt-3 transition duration-150 shadow-md mr-2">
                     <span class="source-icon"></span>
                     <span class="source-link-text">Official Link Source: ${source.text.split('—').pop().trim()}</span>
                 </a>
@@ -895,7 +845,7 @@
             li.innerHTML = `
                 <button class="nav-item w-full text-left flex items-center p-3 transition duration-150 rounded-r-full text-gray-600 hover:bg-gray-100 ${index === currentStepIndex ? 'bg-accent-color text-gray-900 font-semibold shadow-md' : ''}" onclick="goToStep(${index})">
                     <span class="mr-3 text-lg">${step.icon}</span>
-                    <span class="text-sm">${step.title}</span>
+                    <span class="text-base">${step.title}</span>
                 </button>
             `;
             navList.appendChild(li);
@@ -909,7 +859,7 @@
         const selectionScreen = document.getElementById('prompt-selection');
         const startScreen = document.getElementById('start-screen');
         const answerScreen = document.getElementById('answer-screen');
-        const reportScreen = document.getElementById('report-screen');
+        const reportScreen = document('report-screen');
         selectedQuestion = null;
 
         // Reset state
@@ -924,7 +874,7 @@
         INTERVIEW_QUESTIONS.forEach((q, index) => {
             const tile = document.createElement('button');
             tile.className = 'prompt-tile flex flex-col items-center justify-center p-4 bg-white text-gray-800 rounded-xl shadow-lg transition duration-300 hover:bg-gray-50';
-            tile.innerHTML = `<span class="text-4xl">${q.icon}</span><span class="text-sm mt-2 font-semibold">${q.label}</span>`;
+            tile.innerHTML = `<span class="text-4xl">${q.icon}</span><span class="text-lg mt-2 font-semibold">${q.label}</span>`;
             tile.onclick = () => showStartScreen(q);
             selectionScreen.appendChild(tile);
         });
