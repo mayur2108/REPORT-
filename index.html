@@ -81,7 +81,7 @@
             margin-right: 0.25rem;
             vertical-align: middle;
             /* SVG for link/external icon, set to the accent color stroke (Purple) */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B5CF6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B5CF6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
         }
 
         /* Custom CSS for prompt tiles (Cricket style elements) */
@@ -175,9 +175,9 @@
             icon: '🎬',
             content: `
                 <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Welcome, Future Filmmaker! Your Journey to AFI Begins.</h2>
-                <p class="text-xl text-gray-600 mb-6">This isn't just an application; it's the **first scene of your directorial career**, you're applying to one of the world's most prestigious film conservatories, AFI, where legends are made. This digital roadmap is dedicated to you, Sangita, as you embark on this ambitious and rewarding process.</p>
+                <p class="text-xl text-gray-600 mb-6">This isn't just an application; it's the **first scene of your directorial career.** You're applying to one of the world's most prestigious film conservatories, AFI, where legends are made. This digital roadmap is dedicated to you, Sangita, as you embark on this ambitious and rewarding process.</p>
                 
-                <p class="text-xl text-gray-600 mb-6">The next few months will challenge your creative focus and determination. Remember, your unique **'vision'** is your most powerful asset. Every piece of your portfolio—from your moving image sample to your interview—must clearly articulate the filmmaker you are destined to become. We've broken down this cinematic quest into manageable steps. Let's make this happen!</p>
+                <p class="text-xl text-gray-600 mb-6">The next few months will challenge your creative focus and determination. Remember, your unique **"vision"** is your most powerful asset. Every piece of your portfolio—from your moving image sample to your interview—must clearly articulate the filmmaker you are destined to become. We've broken down this cinematic quest into manageable steps. Let's make this happen!</p>
                 
                 <div class="p-6 bg-yellow-100 border-l-4 border-yellow-400 rounded-lg text-yellow-800 shadow-md">
                     <p class="font-bold text-xl">Your Focus Points for Success:</p>
@@ -234,7 +234,7 @@
                 <ul class="space-y-4">
                     <li class="animated-list-item p-6 border-l-emerald-500 bg-emerald-50 rounded-lg shadow-md hover:border-l-emerald-700">
                         <p class="font-medium text-emerald-800 text-xl">Account Creation</p>
-                        <p class="text-lg text-gray-700 mt-2">You will create a GradCAS account (AFI uses GradCAS for applications) and register for the AFI application through that portal.</p>
+                        <p class="text-lg text-gray-700 mt-2">You will create a GradCAS account (AFI uses GradCAS for applications) and register for the AFI application, through that portal.</p>
                         <!-- Source will be inserted here --></li>
                     <li class="animated-list-item p-6 border-l-emerald-500 bg-emerald-50 rounded-lg shadow-md hover:border-l-emerald-700">
                         <p class="font-medium text-emerald-800 text-xl">Application Fee & Records</p>
@@ -587,7 +587,7 @@
                     <li class="animated-list-item p-6 border-l-cyan-500 bg-cyan-50 rounded-lg shadow-md hover:border-l-cyan-700">
                         <p class="font-medium text-cyan-800 text-xl">Supporting Financial Documents</p>
                         <p class="text-lg text-gray-700 mt-2">You will prepare supporting financial documents (bank statements, sponsor letters) if you apply for merit scholarships or need evidence for visa purposes. You will follow AFI’s specific instructions on timing.</p>
-                        <!-- Source will will be inserted here --></li>
+                        <!-- Source will be inserted here --></li>
                 </ul>
             `,
             sources: [
@@ -859,7 +859,7 @@
         const selectionScreen = document.getElementById('prompt-selection');
         const startScreen = document.getElementById('start-screen');
         const answerScreen = document.getElementById('answer-screen');
-        const reportScreen = document('report-screen');
+        const reportScreen = document.getElementById('report-screen');
         selectedQuestion = null;
 
         // Reset state
